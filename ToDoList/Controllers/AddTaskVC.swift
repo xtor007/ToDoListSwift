@@ -16,6 +16,7 @@ class AddTaskVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        nextButton.bindToKeyboard()
 //        let titleTextAttributes = [
 //            NSAttributedString.Key.foregroundColor: CGColor(red: 1, green: 1, blue: 1, alpha: 1),
 //            NSAttributedString.Key.font: UIFont(name: "Papyrus", size: 20.0)!
