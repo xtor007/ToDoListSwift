@@ -29,6 +29,8 @@ class TaskCell: UITableViewCell {
         countLabel.text = String(task.nowCount)
         if task.resultCount <= task.nowCount {
             compliteView.isHidden = false
+        } else {
+            compliteView.isHidden = true
         }
     }
 

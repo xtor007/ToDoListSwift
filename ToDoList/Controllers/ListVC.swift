@@ -68,6 +68,18 @@ class ListVC: UIViewController {
         }
     }
     
+    func addOne(index: Int) {
+        guard let context = appDelegate?.persistentContainer.viewContext else {return}
+        let chosenTask = list[index]
+        chosenTask.nowCount += 1
+        do {
+            try context.save()
+            updateData()
+        } catch {
+            debugPrint(error.localizedDescription)
+        }
+    }
+    
 }
 
 extension ListVC: UITableViewDelegate, UITableViewDataSource {
@@ -88,10 +100,15 @@ extension ListVC: UITableViewDelegate, UITableViewDataSource {
         }
         swipeDelete.backgroundColor = .red
         let swipeAdd = UIContextualAction(style: .normal, title: "ADD 1") { (action, view, success) in
-            print("ADD 1")
+            self.addOne(index: indexPath.row)
         }
         swipeAdd.backgroundColor = .orange
-        let res = UISwipeActionsConfiguration(actions: [swipeDelete, swipeAdd])
+        let chosenTask = list[indexPath.row]
+        var actions = [swipeDelete]
+        if chosenTask.nowCount < chosenTask.resultCount {
+            actions.append(swipeAdd)
+        }
+        let res = UISwipeActionsConfiguration(actions: actions)
         res.performsFirstActionWithFullSwipe = true
         return res
     }
