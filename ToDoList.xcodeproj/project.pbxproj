@@ -14,6 +14,8 @@
 		FF2FD398280BFB2500CD5E2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF2FD397280BFB2500CD5E2D /* Assets.xcassets */; };
 		FF2FD39B280BFB2500CD5E2D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF2FD399280BFB2500CD5E2D /* LaunchScreen.storyboard */; };
 		FF2FD3A6280C03CA00CD5E2D /* ListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2FD3A5280C03CA00CD5E2D /* ListVC.swift */; };
+		FF2FD3A8280C058B00CD5E2D /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2FD3A7280C058B00CD5E2D /* TaskCell.swift */; };
+		FF2FD3B3280C12B700CD5E2D /* Term.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2FD3B2280C12B700CD5E2D /* Term.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		FF2FD39A280BFB2500CD5E2D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FF2FD39C280BFB2500CD5E2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF2FD3A5280C03CA00CD5E2D /* ListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVC.swift; sourceTree = "<group>"; };
+		FF2FD3A7280C058B00CD5E2D /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
+		FF2FD3B2280C12B700CD5E2D /* Term.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Term.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,7 @@
 		FF2FD38A280BFB1C00CD5E2D /* ToDoList */ = {
 			isa = PBXGroup;
 			children = (
+				FF2FD3B1280C12A700CD5E2D /* Enum */,
 				FF2FD3A4280BFB9D00CD5E2D /* Extentions */,
 				FF2FD3A3280BFB8800CD5E2D /* Views */,
 				FF2FD3A2280BFB7A00CD5E2D /* Controllers */,
@@ -83,6 +88,7 @@
 		FF2FD3A3280BFB8800CD5E2D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FF2FD3A7280C058B00CD5E2D /* TaskCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -92,6 +98,14 @@
 			children = (
 			);
 			path = Extentions;
+			sourceTree = "<group>";
+		};
+		FF2FD3B1280C12A700CD5E2D /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				FF2FD3B2280C12B700CD5E2D /* Term.swift */,
+			);
+			path = Enum;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,7 +182,9 @@
 				FF2FD3A6280C03CA00CD5E2D /* ListVC.swift in Sources */,
 				FF2FD38C280BFB1C00CD5E2D /* AppDelegate.swift in Sources */,
 				FF2FD38E280BFB1C00CD5E2D /* SceneDelegate.swift in Sources */,
+				FF2FD3B3280C12B700CD5E2D /* Term.swift in Sources */,
 				FF2FD396280BFB1C00CD5E2D /* ToDoList.xcdatamodeld in Sources */,
+				FF2FD3A8280C058B00CD5E2D /* TaskCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

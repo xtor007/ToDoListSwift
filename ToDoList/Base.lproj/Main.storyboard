@@ -60,7 +60,7 @@
                                 <rect key="frame" x="0.0" y="80" width="375" height="587"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="VZh-Y1-gUF">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="taskCell" rowHeight="80" id="VZh-Y1-gUF" customClass="TaskCell" customModule="ToDoList" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VZh-Y1-gUF" id="hC0-j7-ODL">
@@ -77,7 +77,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Short Term" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SxJ-4T-ipZ">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Long Term" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SxJ-4T-ipZ">
                                                     <rect key="frame" x="16" y="38" width="285" height="31"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="31" id="Fp1-r2-ARf"/>
@@ -93,18 +93,45 @@
                                                     <color key="textColor" systemColor="systemGreenColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <view hidden="YES" alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5tj-2L-Rgd">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="C O M P L I T E" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1t6-1t-axx">
+                                                            <rect key="frame" x="0.0" y="20" width="375" height="40"/>
+                                                            <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="40"/>
+                                                            <color key="textColor" systemColor="tertiarySystemBackgroundColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                                    <constraints>
+                                                        <constraint firstItem="1t6-1t-axx" firstAttribute="leading" secondItem="5tj-2L-Rgd" secondAttribute="leading" id="FVG-ZS-YNo"/>
+                                                        <constraint firstAttribute="trailing" secondItem="1t6-1t-axx" secondAttribute="trailing" id="Kdh-9q-3i8"/>
+                                                        <constraint firstItem="1t6-1t-axx" firstAttribute="centerY" secondItem="5tj-2L-Rgd" secondAttribute="centerY" id="MmA-xK-v4f"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="SxJ-4T-ipZ" firstAttribute="top" secondItem="hC0-j7-ODL" secondAttribute="topMargin" constant="27" id="8M2-v6-1p4"/>
+                                                <constraint firstItem="5tj-2L-Rgd" firstAttribute="leading" secondItem="hC0-j7-ODL" secondAttribute="leading" id="AKH-et-H54"/>
+                                                <constraint firstItem="5tj-2L-Rgd" firstAttribute="top" secondItem="hC0-j7-ODL" secondAttribute="top" id="CXK-MR-yyB"/>
                                                 <constraint firstAttribute="bottom" secondItem="F4Y-DF-09d" secondAttribute="bottom" id="Lx2-JE-goE"/>
                                                 <constraint firstItem="SxJ-4T-ipZ" firstAttribute="leading" secondItem="hC0-j7-ODL" secondAttribute="leadingMargin" id="NgF-vT-Rss"/>
                                                 <constraint firstItem="F4Y-DF-09d" firstAttribute="top" secondItem="hC0-j7-ODL" secondAttribute="top" id="PDf-NN-nGU"/>
+                                                <constraint firstAttribute="trailing" secondItem="5tj-2L-Rgd" secondAttribute="trailing" id="PlK-1C-hQY"/>
                                                 <constraint firstAttribute="trailing" secondItem="F4Y-DF-09d" secondAttribute="trailing" id="ba8-5M-tOR"/>
+                                                <constraint firstAttribute="bottom" secondItem="5tj-2L-Rgd" secondAttribute="bottom" id="cPW-Bk-xAV"/>
                                                 <constraint firstItem="F4Y-DF-09d" firstAttribute="leading" secondItem="x1k-Dh-fPf" secondAttribute="trailing" id="gvu-5c-B1U"/>
                                                 <constraint firstItem="x1k-Dh-fPf" firstAttribute="leading" secondItem="hC0-j7-ODL" secondAttribute="leadingMargin" id="ilj-Yi-Evv"/>
                                                 <constraint firstItem="x1k-Dh-fPf" firstAttribute="top" secondItem="hC0-j7-ODL" secondAttribute="topMargin" id="sxj-HD-PXr"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="compliteView" destination="5tj-2L-Rgd" id="Cg1-XP-gYv"/>
+                                            <outlet property="countLabel" destination="F4Y-DF-09d" id="bMK-yB-m6I"/>
+                                            <outlet property="taskLabel" destination="x1k-Dh-fPf" id="IcD-Ce-1vE"/>
+                                            <outlet property="termLabel" destination="SxJ-4T-ipZ" id="0er-ce-0cQ"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -146,6 +173,12 @@
         </systemColor>
         <systemColor name="systemGroupedBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiarySystemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>
