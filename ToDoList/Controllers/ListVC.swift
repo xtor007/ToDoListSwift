@@ -24,6 +24,15 @@ class ListVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        updateData()
+    }
+    
+    @IBAction func addTaskAction(_ sender: Any) {
+        let addTaskVC = self.storyboard?.instantiateViewController(withIdentifier: "addTaskVC")
+        presentDetail(addTaskVC!)
+    }
+    
+    func updateData() {
         fetch(completion: { (complete) in
             if complete {
                 if list.isEmpty {
@@ -36,11 +45,6 @@ class ListVC: UIViewController {
         })
     }
     
-    @IBAction func addTaskAction(_ sender: Any) {
-        let addTaskVC = self.storyboard?.instantiateViewController(withIdentifier: "addTaskVC")
-        presentDetail(addTaskVC!)
-    }
-    
     func fetch(completion: (_ complete: Bool) -> ()) {
         guard let context = appDelegate?.persistentContainer.viewContext else {return}
         let fetchRequest = NSFetchRequest<UserTask>(entityName: "UserTask")
@@ -50,6 +54,17 @@ class ListVC: UIViewController {
         } catch {
             debugPrint(error.localizedDescription)
             completion(false)
+        }
+    }
+    
+    func removeTask(index: Int) {
+        guard let context = appDelegate?.persistentContainer.viewContext else {return}
+        context.delete(list[index])
+        do {
+            try context.save()
+            updateData()
+        } catch {
+            debugPrint(error.localizedDescription)
         }
     }
     
@@ -66,5 +81,19 @@ extension ListVC: UITableViewDelegate, UITableViewDataSource {
         cell.initTask(list[indexPath.row])
         return cell
     }
-
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let swipeDelete = UIContextualAction(style: .normal, title: "DELETE") { (action, view, success) in
+            self.removeTask(index: indexPath.row)
+        }
+        swipeDelete.backgroundColor = .red
+        let swipeAdd = UIContextualAction(style: .normal, title: "ADD 1") { (action, view, success) in
+            print("ADD 1")
+        }
+        swipeAdd.backgroundColor = .orange
+        let res = UISwipeActionsConfiguration(actions: [swipeDelete, swipeAdd])
+        res.performsFirstActionWithFullSwipe = true
+        return res
+    }
+    
 }
