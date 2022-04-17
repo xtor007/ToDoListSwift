@@ -28,6 +28,7 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pfb-12-XjR">
                                         <rect key="frame" x="304" y="24.5" width="63" height="31"/>
+                                        <color key="tintColor" systemColor="systemGroupedBackgroundColor"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain">
                                             <imageReference key="image" image="plus" catalog="system" symbolScale="large"/>
@@ -159,8 +160,123 @@
             </objects>
             <point key="canvasLocation" x="34.399999999999999" y="83.208395802098963"/>
         </scene>
+        <!--Add TaskVC-->
+        <scene sceneID="IHn-Cy-q3P">
+            <objects>
+                <viewController storyboardIdentifier="addTaskVC" id="89V-df-X4o" customClass="AddTaskVC" customModule="ToDoList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="azf-lL-Jk9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZsC-GY-19b">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To Do List" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vb1-Mn-79v">
+                                        <rect key="frame" x="101.5" y="10.5" width="172" height="59"/>
+                                        <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="50"/>
+                                        <color key="textColor" systemColor="systemGroupedBackgroundColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tgH-yE-fNH">
+                                        <rect key="frame" x="8" y="24.5" width="63" height="31"/>
+                                        <color key="tintColor" systemColor="systemGroupedBackgroundColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <imageReference key="image" image="chevron.backward.circle.fill" catalog="system" symbolScale="large"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="backAction:" destination="89V-df-X4o" eventType="touchUpInside" id="vif-dV-g0L"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstItem="vb1-Mn-79v" firstAttribute="centerY" secondItem="ZsC-GY-19b" secondAttribute="centerY" id="24i-VH-WZY"/>
+                                    <constraint firstAttribute="height" constant="80" id="4O6-R4-Rvn"/>
+                                    <constraint firstItem="vb1-Mn-79v" firstAttribute="leading" secondItem="tgH-yE-fNH" secondAttribute="trailing" constant="30.5" id="IWC-65-1DZ"/>
+                                    <constraint firstItem="tgH-yE-fNH" firstAttribute="centerY" secondItem="ZsC-GY-19b" secondAttribute="centerY" id="bfT-g4-Wne"/>
+                                    <constraint firstItem="vb1-Mn-79v" firstAttribute="centerX" secondItem="ZsC-GY-19b" secondAttribute="centerX" id="c4u-bx-U3f"/>
+                                    <constraint firstItem="tgH-yE-fNH" firstAttribute="leading" secondItem="ZsC-GY-19b" secondAttribute="leading" constant="8" id="fAl-Ra-snV"/>
+                                </constraints>
+                            </view>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Write your task..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ek6-tp-JxU">
+                                <rect key="frame" x="16" y="103" width="343" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="7hv-PX-pZG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select term:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wRZ-Ls-10A">
+                                <rect key="frame" x="16" y="155" width="106" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="106" id="5hn-Za-O6V"/>
+                                    <constraint firstAttribute="height" constant="31" id="eDN-Pe-50l"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="fm1-fY-ipP">
+                                <rect key="frame" x="16" y="194" width="343" height="32"/>
+                                <color key="backgroundColor" red="0.53843279229999996" green="1" blue="0.60270315959999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="V9L-iY-CKJ"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Short"/>
+                                    <segment title="Long"/>
+                                </segments>
+                                <color key="selectedSegmentTintColor" systemColor="systemGreenColor"/>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2kW-fh-Py8">
+                                <rect key="frame" x="0.0" y="587" width="375" height="80"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="8pt-f4-ZUt"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemGroupedBackgroundColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Next">
+                                    <fontDescription key="titleFontDescription" name="Papyrus" family="Papyrus" pointSize="40"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="nextAction:" destination="89V-df-X4o" eventType="touchUpInside" id="sc7-Dy-T9K"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="pL4-Yn-xzf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ZsC-GY-19b" firstAttribute="top" secondItem="pL4-Yn-xzf" secondAttribute="top" id="8ch-gB-ixh"/>
+                            <constraint firstItem="2kW-fh-Py8" firstAttribute="leading" secondItem="pL4-Yn-xzf" secondAttribute="leading" id="9LO-Hk-eGa"/>
+                            <constraint firstItem="wRZ-Ls-10A" firstAttribute="leading" secondItem="pL4-Yn-xzf" secondAttribute="leading" constant="16" id="ERd-wI-7MV"/>
+                            <constraint firstItem="ZsC-GY-19b" firstAttribute="trailing" secondItem="pL4-Yn-xzf" secondAttribute="trailing" id="OV4-4f-zSd"/>
+                            <constraint firstItem="fm1-fY-ipP" firstAttribute="leading" secondItem="pL4-Yn-xzf" secondAttribute="leading" constant="16" id="Tog-8x-doR"/>
+                            <constraint firstItem="2kW-fh-Py8" firstAttribute="trailing" secondItem="pL4-Yn-xzf" secondAttribute="trailing" id="bgR-Mr-OGn"/>
+                            <constraint firstItem="Ek6-tp-JxU" firstAttribute="leading" secondItem="pL4-Yn-xzf" secondAttribute="leading" constant="16" id="dfO-ZQ-QCt"/>
+                            <constraint firstItem="pL4-Yn-xzf" firstAttribute="trailing" secondItem="Ek6-tp-JxU" secondAttribute="trailing" constant="16" id="h1M-0c-We7"/>
+                            <constraint firstItem="2kW-fh-Py8" firstAttribute="bottom" secondItem="pL4-Yn-xzf" secondAttribute="bottom" id="inV-p0-g9a"/>
+                            <constraint firstItem="wRZ-Ls-10A" firstAttribute="top" secondItem="Ek6-tp-JxU" secondAttribute="bottom" constant="18" id="kmo-P3-zyc"/>
+                            <constraint firstItem="Ek6-tp-JxU" firstAttribute="top" secondItem="ZsC-GY-19b" secondAttribute="bottom" constant="23" id="nAK-Ts-6HY"/>
+                            <constraint firstItem="pL4-Yn-xzf" firstAttribute="trailing" secondItem="fm1-fY-ipP" secondAttribute="trailing" constant="16" id="paU-oz-JzU"/>
+                            <constraint firstItem="ZsC-GY-19b" firstAttribute="leading" secondItem="pL4-Yn-xzf" secondAttribute="leading" id="uu0-cw-Lc5"/>
+                            <constraint firstItem="fm1-fY-ipP" firstAttribute="top" secondItem="wRZ-Ls-10A" secondAttribute="bottom" constant="8" id="xAa-QE-Vd4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="nextButton" destination="2kW-fh-Py8" id="hk2-Bn-10i"/>
+                        <outlet property="taskTextField" destination="Ek6-tp-JxU" id="lKG-yQ-cJP"/>
+                        <outlet property="termSegmentControl" destination="fm1-fY-ipP" id="Our-bW-T5m"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1EH-0o-VCa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="760.79999999999995" y="82.3088455772114"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="chevron.backward.circle.fill" catalog="system" width="128" height="121"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

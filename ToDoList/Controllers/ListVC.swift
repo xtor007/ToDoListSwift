@@ -53,7 +53,8 @@ class ListVC: UIViewController {
     
     
     @IBAction func addTaskAction(_ sender: Any) {
-        print("add task")
+        let addTaskVC = self.storyboard?.instantiateViewController(withIdentifier: "addTaskVC")
+        presentDetail(addTaskVC!)
     }
     
 }
