@@ -247,6 +247,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pL4-Yn-xzf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="ZsC-GY-19b" firstAttribute="top" secondItem="pL4-Yn-xzf" secondAttribute="top" id="8ch-gB-ixh"/>
                             <constraint firstItem="2kW-fh-Py8" firstAttribute="leading" secondItem="pL4-Yn-xzf" secondAttribute="leading" id="9LO-Hk-eGa"/>
@@ -263,6 +264,9 @@
                             <constraint firstItem="ZsC-GY-19b" firstAttribute="leading" secondItem="pL4-Yn-xzf" secondAttribute="leading" id="uu0-cw-Lc5"/>
                             <constraint firstItem="fm1-fY-ipP" firstAttribute="top" secondItem="wRZ-Ls-10A" secondAttribute="bottom" constant="8" id="xAa-QE-Vd4"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="jVX-BH-P3R" appends="YES" id="hdo-J4-bX0"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="nextButton" destination="2kW-fh-Py8" id="hk2-Bn-10i"/>
@@ -271,8 +275,118 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1EH-0o-VCa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="jVX-BH-P3R">
+                    <connections>
+                        <action selector="tapToSpace:" destination="89V-df-X4o" id="rOr-8v-8MC"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="760.79999999999995" y="82.3088455772114"/>
+        </scene>
+        <!--Set CountVC-->
+        <scene sceneID="Shf-HV-B0D">
+            <objects>
+                <viewController storyboardIdentifier="setCountVC" id="W9q-cm-uBf" customClass="SetCountVC" customModule="ToDoList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CWn-Sy-BrM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tX1-LS-uqT">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To Do List" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fqL-fc-G5v">
+                                        <rect key="frame" x="101.5" y="10.5" width="172" height="59"/>
+                                        <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="50"/>
+                                        <color key="textColor" systemColor="systemGroupedBackgroundColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z3o-6F-8eU">
+                                        <rect key="frame" x="8" y="24.5" width="63" height="31"/>
+                                        <color key="tintColor" systemColor="systemGroupedBackgroundColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <imageReference key="image" image="chevron.backward.circle.fill" catalog="system" symbolScale="large"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="backAction:" destination="W9q-cm-uBf" eventType="touchUpInside" id="0We-nq-Ewe"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstItem="z3o-6F-8eU" firstAttribute="centerY" secondItem="tX1-LS-uqT" secondAttribute="centerY" id="2eW-6J-VIK"/>
+                                    <constraint firstItem="fqL-fc-G5v" firstAttribute="leading" secondItem="z3o-6F-8eU" secondAttribute="trailing" constant="30.5" id="4OD-Ho-xcH"/>
+                                    <constraint firstItem="fqL-fc-G5v" firstAttribute="centerX" secondItem="tX1-LS-uqT" secondAttribute="centerX" id="Al6-gs-U3P"/>
+                                    <constraint firstAttribute="height" constant="80" id="EBA-Rp-9SO"/>
+                                    <constraint firstItem="fqL-fc-G5v" firstAttribute="centerY" secondItem="tX1-LS-uqT" secondAttribute="centerY" id="U76-BK-h6z"/>
+                                    <constraint firstItem="z3o-6F-8eU" firstAttribute="leading" secondItem="tX1-LS-uqT" secondAttribute="leading" constant="8" id="wdC-xv-kWv"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HZZ-eI-J53">
+                                <rect key="frame" x="0.0" y="587" width="375" height="80"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="2JV-Zg-GYY"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemGroupedBackgroundColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Add">
+                                    <fontDescription key="titleFontDescription" name="Papyrus" family="Papyrus" pointSize="40"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="addAction:" destination="W9q-cm-uBf" eventType="touchUpInside" id="S1Y-Jc-duq"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HrT-bR-0G7">
+                                <rect key="frame" x="0.0" y="251.5" width="375" height="164"/>
+                                <color key="textColor" systemColor="systemGreenColor"/>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="100"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select count of repeat:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Uv-Xs-XnF">
+                                <rect key="frame" x="16" y="203" width="205" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="205" id="2kJ-t5-gTA"/>
+                                    <constraint firstAttribute="height" constant="31" id="6no-Fd-xsI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="2wb-nr-lHz"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="HZZ-eI-J53" firstAttribute="trailing" secondItem="2wb-nr-lHz" secondAttribute="trailing" id="1ko-Wh-TSP"/>
+                            <constraint firstItem="tX1-LS-uqT" firstAttribute="trailing" secondItem="2wb-nr-lHz" secondAttribute="trailing" id="2Og-04-eRV"/>
+                            <constraint firstItem="HrT-bR-0G7" firstAttribute="centerY" secondItem="2wb-nr-lHz" secondAttribute="centerY" id="2hP-tM-XQN"/>
+                            <constraint firstItem="tX1-LS-uqT" firstAttribute="leading" secondItem="2wb-nr-lHz" secondAttribute="leading" id="9oC-Fk-EYb"/>
+                            <constraint firstItem="5Uv-Xs-XnF" firstAttribute="leading" secondItem="2wb-nr-lHz" secondAttribute="leading" constant="16" id="Jah-aR-QEu"/>
+                            <constraint firstItem="HrT-bR-0G7" firstAttribute="trailing" secondItem="2wb-nr-lHz" secondAttribute="trailing" id="Se9-9X-ppR"/>
+                            <constraint firstItem="5Uv-Xs-XnF" firstAttribute="top" secondItem="tX1-LS-uqT" secondAttribute="bottom" constant="123" id="YTw-we-VVA"/>
+                            <constraint firstItem="HrT-bR-0G7" firstAttribute="leading" secondItem="2wb-nr-lHz" secondAttribute="leading" id="bxo-px-7r2"/>
+                            <constraint firstItem="tX1-LS-uqT" firstAttribute="top" secondItem="2wb-nr-lHz" secondAttribute="top" id="eel-VR-GfZ"/>
+                            <constraint firstItem="HZZ-eI-J53" firstAttribute="leading" secondItem="2wb-nr-lHz" secondAttribute="leading" id="iwW-ab-S9w"/>
+                            <constraint firstItem="HZZ-eI-J53" firstAttribute="bottom" secondItem="2wb-nr-lHz" secondAttribute="bottom" id="uMt-iv-8Ul"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="5pH-EM-0UZ" appends="YES" id="fX5-xH-QJL"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="addButton" destination="HZZ-eI-J53" id="bad-FT-Frx"/>
+                        <outlet property="countTextField" destination="HrT-bR-0G7" id="yAz-ve-X95"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LPl-Pu-wSh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="5pH-EM-0UZ">
+                    <connections>
+                        <action selector="tapToSpace:" destination="W9q-cm-uBf" id="ntq-e9-1ij"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1488.8" y="81.409295352323838"/>
         </scene>
     </scenes>
     <resources>

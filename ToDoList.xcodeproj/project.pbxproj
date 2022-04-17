@@ -19,6 +19,7 @@
 		FF2FD3B5280C230200CD5E2D /* AddTaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2FD3B4280C230200CD5E2D /* AddTaskVC.swift */; };
 		FF2FD3B7280C347500CD5E2D /* CustomPresent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2FD3B6280C347500CD5E2D /* CustomPresent.swift */; };
 		FF2FD3B9280C36CC00CD5E2D /* KeyboardControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2FD3B8280C36CC00CD5E2D /* KeyboardControl.swift */; };
+		FF2FD3BB280C391600CD5E2D /* SetCountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2FD3BA280C391600CD5E2D /* SetCountVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		FF2FD3B4280C230200CD5E2D /* AddTaskVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskVC.swift; sourceTree = "<group>"; };
 		FF2FD3B6280C347500CD5E2D /* CustomPresent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPresent.swift; sourceTree = "<group>"; };
 		FF2FD3B8280C36CC00CD5E2D /* KeyboardControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardControl.swift; sourceTree = "<group>"; };
+		FF2FD3BA280C391600CD5E2D /* SetCountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCountVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 			children = (
 				FF2FD3A5280C03CA00CD5E2D /* ListVC.swift */,
 				FF2FD3B4280C230200CD5E2D /* AddTaskVC.swift */,
+				FF2FD3BA280C391600CD5E2D /* SetCountVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 				FF2FD3B7280C347500CD5E2D /* CustomPresent.swift in Sources */,
 				FF2FD3B5280C230200CD5E2D /* AddTaskVC.swift in Sources */,
 				FF2FD3B9280C36CC00CD5E2D /* KeyboardControl.swift in Sources */,
+				FF2FD3BB280C391600CD5E2D /* SetCountVC.swift in Sources */,
 				FF2FD38E280BFB1C00CD5E2D /* SceneDelegate.swift in Sources */,
 				FF2FD3B3280C12B700CD5E2D /* Term.swift in Sources */,
 				FF2FD396280BFB1C00CD5E2D /* ToDoList.xcdatamodeld in Sources */,

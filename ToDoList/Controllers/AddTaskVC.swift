@@ -9,14 +9,16 @@ import UIKit
 
 class AddTaskVC: UIViewController {
     
-    
     @IBOutlet weak var taskTextField: UITextField!
     @IBOutlet weak var termSegmentControl: UISegmentedControl!
     @IBOutlet weak var nextButton: UIButton!
     
+    let terms = [Term.short,Term.long]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        nextButton.bindToKeyboard()
+        //nextButton.bindToKeyboard()
+        taskTextField.resignFirstResponder()
 //        let titleTextAttributes = [
 //            NSAttributedString.Key.foregroundColor: CGColor(red: 1, green: 1, blue: 1, alpha: 1),
 //            NSAttributedString.Key.font: UIFont(name: "Papyrus", size: 20.0)!
@@ -32,7 +34,19 @@ class AddTaskVC: UIViewController {
     
     
     @IBAction func nextAction(_ sender: Any) {
-        print("next")
+        if let task = taskTextField.text {
+            if task != "" {
+                let setCountVC = self.storyboard?.instantiateViewController(withIdentifier: "setCountVC") as! SetCountVC
+                setCountVC.task = task
+                setCountVC.term = terms[termSegmentControl.selectedSegmentIndex]
+                presentDetail(setCountVC)
+            }
+        }
     }
+    
+    @IBAction func tapToSpace(_ sender: Any) {
+        taskTextField.endEditing(true)
+    }
+    
     
 }
