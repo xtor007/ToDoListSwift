@@ -136,10 +136,66 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Id-C0-2Wv">
+                                <rect key="frame" x="0.0" y="587" width="375" height="80"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you sure?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3lp-cz-UkI">
+                                        <rect key="frame" x="66" y="25" width="133" height="31"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="133" id="LEd-GM-Mww"/>
+                                            <constraint firstAttribute="height" constant="31" id="lXg-cW-dhH"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="20"/>
+                                        <color key="textColor" systemColor="tertiarySystemBackgroundColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="In9-QI-Kf9">
+                                        <rect key="frame" x="0.0" y="25" width="63" height="31"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="In9-QI-Kf9" secondAttribute="height" multiplier="63:31" id="1xk-Do-DxI"/>
+                                        </constraints>
+                                        <color key="tintColor" systemColor="systemGroupedBackgroundColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <imageReference key="image" image="clear.fill" catalog="system" symbolScale="large"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="notDeleteAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Snb-gT-Wz1"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Bv-Q9-8eK">
+                                        <rect key="frame" x="292" y="18" width="64" height="45"/>
+                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="BJy-H8-wTh"/>
+                                            <constraint firstAttribute="width" constant="64" id="c0L-UP-HD6"/>
+                                        </constraints>
+                                        <color key="tintColor" systemColor="tertiarySystemBackgroundColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="YES">
+                                            <fontDescription key="titleFontDescription" name="Papyrus" family="Papyrus" pointSize="20"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="yesDeleteAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dAN-tk-2h0"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <constraints>
+                                    <constraint firstItem="3lp-cz-UkI" firstAttribute="leading" secondItem="In9-QI-Kf9" secondAttribute="trailing" constant="3" id="0oA-bt-gs8"/>
+                                    <constraint firstAttribute="bottom" secondItem="2Bv-Q9-8eK" secondAttribute="bottom" constant="17" id="Hul-kC-9xt"/>
+                                    <constraint firstAttribute="bottom" secondItem="In9-QI-Kf9" secondAttribute="bottom" constant="24" id="UgX-AR-KpF"/>
+                                    <constraint firstItem="In9-QI-Kf9" firstAttribute="leading" secondItem="8Id-C0-2Wv" secondAttribute="leading" id="duO-9O-DQU"/>
+                                    <constraint firstAttribute="height" constant="80" id="e0i-u5-aGv"/>
+                                    <constraint firstItem="2Bv-Q9-8eK" firstAttribute="leading" secondItem="3lp-cz-UkI" secondAttribute="trailing" constant="93" id="iJq-zy-l7P"/>
+                                    <constraint firstAttribute="bottom" secondItem="3lp-cz-UkI" secondAttribute="bottom" constant="24" id="l2c-hw-f7W"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="8Id-C0-2Wv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5iQ-vh-yox"/>
                             <constraint firstItem="sht-JW-VB8" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Lb0-6g-T6D"/>
                             <constraint firstItem="sht-JW-VB8" firstAttribute="top" secondItem="iyz-U6-42W" secondAttribute="bottom" id="Q1r-W5-NEM"/>
                             <constraint firstItem="qZU-cy-3XO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="SLH-mt-S5g"/>
@@ -149,10 +205,13 @@
                             <constraint firstItem="sht-JW-VB8" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="kpj-7N-HBU"/>
                             <constraint firstItem="sht-JW-VB8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="nqc-C9-2Cl"/>
                             <constraint firstItem="qZU-cy-3XO" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="oFf-Za-IEO"/>
+                            <constraint firstAttribute="bottom" secondItem="8Id-C0-2Wv" secondAttribute="bottom" id="t9c-RY-qZ9"/>
+                            <constraint firstItem="8Id-C0-2Wv" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="tiq-rf-aiG"/>
                             <constraint firstItem="iyz-U6-42W" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xy0-KJ-ECL"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="deleteConfirmationView" destination="8Id-C0-2Wv" id="Ws4-UO-xpF"/>
                         <outlet property="taskListTable" destination="sht-JW-VB8" id="Z2E-gV-uNQ"/>
                     </connections>
                 </viewController>
@@ -391,6 +450,7 @@
     </scenes>
     <resources>
         <image name="chevron.backward.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="clear.fill" catalog="system" width="128" height="114"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -403,6 +463,9 @@
         </systemColor>
         <systemColor name="systemGroupedBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

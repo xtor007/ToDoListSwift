@@ -14,7 +14,12 @@ class ListVC: UIViewController {
 
     @IBOutlet weak var taskListTable: UITableView!
     
+    @IBOutlet weak var deleteConfirmationView: UIView!
+    
+    
     var list: [UserTask] = []
+    
+    var maybeDeleteIndex: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +36,21 @@ class ListVC: UIViewController {
         let addTaskVC = self.storyboard?.instantiateViewController(withIdentifier: "addTaskVC")
         presentDetail(addTaskVC!)
     }
+    
+    @IBAction func notDeleteAction(_ sender: Any) {
+        maybeDeleteIndex = nil
+        deleteConfirmationView.isHidden = true
+        updateData()
+    }
+    
+    @IBAction func yesDeleteAction(_ sender: Any) {
+        if let deleteIndex = maybeDeleteIndex {
+            removeTask(index: deleteIndex)
+        }
+        deleteConfirmationView.isHidden = true
+    }
+    
+    
     
     func updateData() {
         fetch(completion: { (complete) in
@@ -55,6 +75,11 @@ class ListVC: UIViewController {
             debugPrint(error.localizedDescription)
             completion(false)
         }
+    }
+    
+    func maybeRemoveTask(index: Int) {
+        deleteConfirmationView.isHidden = false
+        maybeDeleteIndex = index
     }
     
     func removeTask(index: Int) {
@@ -96,7 +121,7 @@ extension ListVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let swipeDelete = UIContextualAction(style: .normal, title: "DELETE") { (action, view, success) in
-            self.removeTask(index: indexPath.row)
+            self.maybeRemoveTask(index: indexPath.row)
         }
         swipeDelete.backgroundColor = .red
         let swipeAdd = UIContextualAction(style: .normal, title: "ADD 1") { (action, view, success) in
