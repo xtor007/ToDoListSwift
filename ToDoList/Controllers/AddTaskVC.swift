@@ -19,6 +19,8 @@ class AddTaskVC: UIViewController {
     
     let terms = [Term.short,Term.long]
     
+    var isNeedToClose = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //nextButton.bindToKeyboard()
@@ -30,6 +32,13 @@ class AddTaskVC: UIViewController {
 //        termSegmentControl.setTitleTextAttributes(titleTextAttributes, for: .normal)
 //        termSegmentControl.setTitleTextAttributes(titleTextAttributes, for: .selected)
 //      
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if isNeedToClose {
+            dismiss(animated: false)
+        }
     }
     
     @IBAction func backAction(_ sender: Any) {
@@ -58,7 +67,7 @@ class AddTaskVC: UIViewController {
 extension AddTaskVC: ViewOuputDelegate {
     
     func closeScreen() {
-        dismiss(animated: false)
+        isNeedToClose = true
     }
     
 }
