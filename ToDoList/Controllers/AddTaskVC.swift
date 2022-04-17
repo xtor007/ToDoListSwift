@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol  ViewOuputDelegate{
+    func closeScreen()
+}
+
 class AddTaskVC: UIViewController {
     
     @IBOutlet weak var taskTextField: UITextField!
@@ -39,6 +43,7 @@ class AddTaskVC: UIViewController {
                 let setCountVC = self.storyboard?.instantiateViewController(withIdentifier: "setCountVC") as! SetCountVC
                 setCountVC.task = task
                 setCountVC.term = terms[termSegmentControl.selectedSegmentIndex]
+                setCountVC.delegate = self
                 presentDetail(setCountVC)
             }
         }
@@ -48,5 +53,12 @@ class AddTaskVC: UIViewController {
         taskTextField.endEditing(true)
     }
     
+}
+
+extension AddTaskVC: ViewOuputDelegate {
+    
+    func closeScreen() {
+        dismiss(animated: false)
+    }
     
 }
